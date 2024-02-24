@@ -86,14 +86,6 @@ class Board:
     def move(self, piece, row, col):
         self.board[piece.row][piece.col], self.board[row][col] = self.board[row][col], self.board[piece.row][piece.col]
         piece.move(row, col)
-        
-        # If black flag moves to the opposite side of the board, black wins
-        if row == 0 and piece.rank == FlagBlack:
-            pass
-
-        # If white moves to the opposite side of the board, white win
-        if row == ROWS and piece.rank == FlagWhite:
-            pass
 
     # This function will return the piece at a certain location of the board
     def get_piece(self, row, col):
